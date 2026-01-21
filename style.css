@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    padding-top: 100px;
+}
+
+/* 네비게이션 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.navbar a:hover {
+    color: #e07a5f;
+}
+
+.navbar a.active {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5c4033;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.profile-card:hover {
+    background-color: #fff5f0;
+    transform: translateY(-5px);
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.profile-image:hover {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    transform: rotate(5deg) scale(1.05);
+}
+
+.name {
+    font-family: 'Gowun Dodum', sans-serif;
+    color: #333;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+section:hover {
+    background-color: #fff5f0;
+    transform: translateY(-3px);
+}
+
+h2 {
+    color: #e07a5f;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.intro p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.favorites ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.favorites li {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5c4033;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.favorites li:hover,
+.skills li:hover {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d6a4f;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 히어로 섹션 */
+.hero {
+    padding: 50px 40px;
+}
+
+.tagline {
+    color: #888;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 버튼 */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5c4033;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #fcb69f;
+    color: #e07a5f;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5c4033;
+}
+
+/* 스킬 섹션 */
+.skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills li {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #5c4033;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* 연락처 정보 */
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    color: #888;
+    font-weight: 600;
+}
+
+.contact-value {
+    color: #333;
+}
+
+/* 폼 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #fcb69f;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+/* 다크모드 토글 버튼 */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* 다크모드 */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-mode .profile-card,
+body.dark-mode section {
+    background: #1f1f38;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .profile-card:hover,
+body.dark-mode section:hover {
+    background-color: #2a2a4a;
+}
+
+body.dark-mode .profile-image {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #1f1f38;
+}
+
+body.dark-mode .profile-image:hover {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+body.dark-mode .name {
+    color: #f0f0f0;
+}
+
+body.dark-mode h2 {
+    color: #a8edea;
+    border-bottom-color: #333;
+}
+
+body.dark-mode .intro p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .favorites li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .favorites li:hover {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #1a1a2e;
+}
+
+body.dark-mode .theme-toggle {
+    background: #1f1f38;
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background: #1f1f38;
+}
+
+body.dark-mode .navbar a {
+    color: #b0b0b0;
+}
+
+body.dark-mode .navbar a:hover {
+    color: #a8edea;
+}
+
+body.dark-mode .navbar a.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .tagline {
+    color: #b0b0b0;
+}
+
+body.dark-mode .btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .btn-outline {
+    background: transparent;
+    border-color: #667eea;
+    color: #a8edea;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .skills li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .contact-item {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .contact-label {
+    color: #888;
+}
+
+body.dark-mode .contact-value {
+    color: #f0f0f0;
+}
+
+body.dark-mode .form-group label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #2a2a4a;
+    border-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: #667eea;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 15px;
+        padding-top: 80px;
+    }
+
+    .navbar {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+
+    .navbar a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .theme-toggle {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .profile-card {
+        padding: 30px 20px;
+        margin-bottom: 20px;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .favorites ul,
+    .skills ul {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .favorites li,
+    .skills li {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .favorites li:hover,
+    .skills li:hover {
+        transform: scale(1.05);
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+}
+
+/* 태블릿 반응형 */
+@media (max-width: 768px) and (min-width: 481px) {
+    body {
+        padding: 30px 20px;
+        padding-top: 80px;
+    }
+
+    .profile-image {
+        width: 130px;
+        height: 130px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+}
